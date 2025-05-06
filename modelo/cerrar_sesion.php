@@ -1,9 +1,10 @@
 <?php
     session_start();
 
-    session_urset();
+    session_unset();
 
     session_destroy();
 
     header("location: ../index.php");
+
 ?>

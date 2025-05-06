@@ -1,30 +1,30 @@
 <?php
-   require 'conexion.php';
-   
-   // Iniciar sesion para guardar los datos de usuario
-   session_start();
+    require 'conexion.php';
 
-   $usuario = $_POST['email'];
-   $password = $_POST['password'];
+    // iniciar sesión para guardar los datos del usuario
+    session_start();
 
-   $query1 = "SELECT email, COUNT(*) AS contar FROM Usuario WHERE email = '$usuario' AND password = '$password'"; 
+    $usuario = $_POST['email'];
+    $password = $_POST['password'];
 
-   $consulta = mysqli_query($conexion, $query1) or trigger_error("error en la consulta MySQL: " + mysqli_error($conexion));
+    $query_1 = "SELECT email, COUNT(*) AS contar FROM Usuario WHERE email = '$usuario' AND password = '$password'";
 
-   $resultado = mysqli_fetch_array($consulta);
+    $consulta = mysqli_query($conexion, $query_1) or trigger_error("Error en la consulta MySQL:  " + mysqli_error($conexion));
 
-   if($resultado['contar']>0)
-   {
-      $_SESSION['username'] = $usuario;
-      // REdirigir el usuario a la pagina
-      header("location: ../pagina_usuario.php");
+    $resultado = mysqli_fetch_array($consulta);
 
-      /*echo "el usuario existe en la BD<br>";
-      echo $resultado ['email'];*/
-   }
-   else 
-   {
-      echo "el usuario no existe, o usuario o contraseña incorrecta";
-   }
+    if($resultado['contar']>0)
+    {
+        $_SESSION['username'] = $usuario;
 
+        // redirigir el usuario a su pagina
+        header("location: ../pagina_usuario.php");
+
+        /*echo "El usuario existe en la BD<br>";
+        echo $resultado['email'];*/
+    }
+    else
+    {
+        echo "El usuario no existe, o usuario o contraseña incorrecta";
+    }
 ?>

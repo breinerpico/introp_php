@@ -4,16 +4,16 @@
     //Parametros requeridos para la conexion la BD
 
     // Parámetros BD local
-   /* DEFINE('USER', 'root'); //Crea la constante USER con valor 'root'
+    DEFINE('USER', 'root'); //Crea la constante USER con valor 'root'
     DEFINE('PW', '');
     DEFINE('HOST', 'localhost');
-    DEFINE('BD', 'Empresa');*/
+    DEFINE('BD', 'Empresa');
 
     // Parámetros BD remota (infinityfree.com)
-    DEFINE('USER', 'if0_38542088'); //Crea la constante USER con valor 'if0_38542106'
+    /*DEFINE('USER', 'if0_38542088'); //Crea la constante USER con valor 'if0_38542106'
     DEFINE('PW', 'breinerpico03');
     DEFINE('HOST', 'sql100.infinityfree.com');
-    DEFINE('BD', 'if0_38542088_empresa');
+    DEFINE('BD', 'if0_38542088_empresa');*/
 
     // Conexion con la BD
     $conexion = mysqli_connect(HOST, USER, PW, BD);
